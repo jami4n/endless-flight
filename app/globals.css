@@ -42,6 +42,8 @@ img {
   overflow: hidden;
   isolation: isolate;
 
+  perspective: 900px;
+
   background-image:
     linear-gradient(
       rgba(5, 31, 57, 0.08),
@@ -116,6 +118,36 @@ img {
   animation: haze-drift-two 58s ease-in-out infinite alternate;
 }
 
+/* Island layer */
+
+.island-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.island {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: none;
+  height: auto;
+  max-width: none;
+
+  transform-origin: center;
+  will-change: transform;
+
+  pointer-events: none;
+  user-select: none;
+
+  filter: drop-shadow(
+    0 12px 14px rgba(0, 0, 0, 0.1)
+  );
+}
+
 /* Cloud layers */
 
 .cloud-layer {
@@ -177,6 +209,8 @@ img {
 
   transform-origin: center;
   will-change: transform;
+
+  transform-style: preserve-3d;
 
   pointer-events: none;
 }
